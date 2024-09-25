@@ -12,8 +12,12 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "base"
-
+  config.vm.box = "debian/bookworm64"
+  config.vm.provider "virtualbox" do |vb|
+  config.vm.define "web" do |web|
+  config.memory=256
+  end
+end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
